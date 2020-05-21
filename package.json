@@ -1,0 +1,16 @@
+{
+  "name": "unknown",
+  "version": "1.0.0",
+  "description": "TBA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emanuil Ganchev",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3"
+  }
+}
