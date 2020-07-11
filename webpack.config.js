@@ -1,11 +1,13 @@
-import * as path from "path";
-import * as webpack from 'webpack';
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
+// @ts-check
+
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const env = process.env.NODE_ENV === "development" ? "development" : "production";
 
-const config: webpack.Configuration = {
+/** @type { import('webpack').Configuration } */
+const config = {
     entry: path.resolve("./src/index.tsx"),
     mode: env,
     output: {
