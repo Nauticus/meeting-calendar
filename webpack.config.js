@@ -4,15 +4,13 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const env = process.env.NODE_ENV === "development" ? "development" : "production";
-
 /** @type { import('webpack').Configuration } */
 const config = {
-    entry: path.resolve("./src/index.tsx"),
-    mode: env,
+    entry: path.resolve(__dirname, "src/index.tsx"),
+    mode: process.env.NODE_ENV === "development" ? "development" : "production",
     output: {
         filename: "[name].[chunkhash].js",
-        path: path.resolve("./build"),
+        path: path.resolve(__dirname, "build/"),
     },
     module: {
         rules: [
@@ -25,6 +23,9 @@ const config = {
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
+        alias: {
+            app: path.resolve(__dirname, "src/"),
+        },
     },
     optimization: {
         splitChunks: {

@@ -1,10 +1,21 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import { Provider } from "react-redux";
+import ReactDOM from "react-dom";
+import configureStore from "app/store/createStore";
+import Calendar from "app/compositions/calendar";
+import { ThemeProvider, theme } from "./theming";
+import data from './data.json';
+import normalize from './normalize';
 
-interface AppProps {
-    title?: string;
-}
+const normalizedData = normalize(data);
 
-const App = ({ title }: AppProps) => <div>{title}</div>;
+const store = configureStore(normalizedData);
 
-ReactDOM.render(<App title="Some text here" />, document.getElementById("root"));
+ReactDOM.render(
+    <Provider store={store}>
+        <ThemeProvider theme={theme}>
+            <Calendar />
+        </ThemeProvider>
+    </Provider>,
+    document.getElementById("root")
+);

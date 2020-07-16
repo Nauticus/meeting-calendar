@@ -3,10 +3,15 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "module": "es6",
-    "target": "es5",
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "module": "ES6",
+    "target": "ES5",
     "jsx": "react",
-    "allowJs": true
+    "baseUrl": ".",
+    "paths": {
+      "app/*": ["src/*"]
+    }
   },
   "include": ["src/**/*"]
 }

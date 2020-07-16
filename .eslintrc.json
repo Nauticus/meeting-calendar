@@ -5,7 +5,7 @@
   ],
   "plugins": ["@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
-  "ignorePatterns": ["webpack.config.js"],
+  "ignorePatterns": ["webpack.config.js", "jest.config.js", "/build/*"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
