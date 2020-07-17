@@ -2,9 +2,7 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
     Events: {
-        flexGrow: 1,
-        marginTop: "30px",
-        padding: "5px",
+        height: '100%'
     },
     Event: {
         padding: "5px",

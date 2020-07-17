@@ -1,7 +1,7 @@
 import * as React from "react";
 import { eachDayOfInterval, startOfWeek, endOfWeek, endOfMonth } from "date-fns";
 import _ from "lodash";
-import {Typography} from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 
 import { useTheme } from "app/theming";
 
@@ -27,9 +27,13 @@ const Month: React.FunctionComponent<MonthProps> = ({ currentDate }: MonthProps)
         <div className={classes.TableWrapper}>
             <table className={classes.Table}>
                 <thead>
-                    <tr>
+                    <tr className={classes.TableHeader}>
                         {WEEK_DAYS.map((day, index) => (
-                            <th key={index}><Typography gutterBottom variant="button">{day}</Typography></th>
+                            <th key={index}>
+                                <Typography gutterBottom variant="button">
+                                    {day}
+                                </Typography>
+                            </th>
                         ))}
                     </tr>
                 </thead>

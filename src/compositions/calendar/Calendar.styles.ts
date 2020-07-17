@@ -4,12 +4,20 @@ const useStyles = createUseStyles({
     "@global": {
         body: {
             margin: 0,
+            minHeight: "100%",
+        },
+        html: {
+            height: "100vh",
+        },
+        "#root": {
+            height: "100%",
         },
     },
     Wrapper: {
-        padding: "0 20px",
+        height: "100%",
+        padding: "20px",
+        boxSizing: "border-box",
         overflow: "hidden",
-        height: "100vh",
         display: "flex",
         flexDirection: "column",
     },

@@ -5,7 +5,9 @@ const useStyles = createUseStyles(
     {
         TableWrapper: {
             flexGrow: 1,
-            marginBottom: "20px",
+        },
+        TableHeader: {
+            height: "50px",
         },
         Table: {
             tableLayout: "fixed",
@@ -15,6 +17,7 @@ const useStyles = createUseStyles(
             "& td": {
                 border: ({ theme }: { theme: ThemeType }) => `1px Solid ${theme.primaryColorLight}`,
                 cursor: "pointer",
+                verticalAlign: "top",
                 "&:hover": {
                     background: ({ theme }: { theme: ThemeType }) => theme.primaryColorLight,
                 },

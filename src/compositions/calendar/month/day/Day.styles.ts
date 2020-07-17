@@ -2,9 +2,9 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
     DayWrapper: {
-        display: "flex",
         position: "relative",
         height: "100%",
+        padding: "40px 5px 5px",
     },
     DayLabel: {
         position: "absolute",
