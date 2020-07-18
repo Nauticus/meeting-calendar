@@ -37,7 +37,7 @@ const Month: React.FunctionComponent<MonthProps> = ({ currentDate }: MonthProps)
                         ))}
                     </tr>
                 </thead>
-                <tbody>
+                <tbody data-testid="calendarGrid">
                     {daysInMonthChunks.map((daysInWeek, key) => (
                         <tr key={key}>
                             {daysInWeek.map((day, dayKey) => (

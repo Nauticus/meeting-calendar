@@ -47,7 +47,7 @@ const EventsDialog: React.FunctionComponent<EventsDialogProps> = ({ isOpen, onCl
                         </List>
                     ))
                 ) : (
-                    <Alert severity="info">{"There are no events for this day."}</Alert>
+                    <Alert severity="info">{"There are no events on this day."}</Alert>
                 )}
             </DialogContent>
             <DialogActions>

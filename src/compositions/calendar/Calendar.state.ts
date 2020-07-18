@@ -15,7 +15,7 @@ const initialState = Record<State>({
 const reducer = (state = initialState(), { type, payload }: ActionTypes): ReturnType<typeof initialState> => {
     switch (type) {
         case ADD_EVENT:
-            return state.updateIn([EVENTS], (events: Event[]) => events.push(payload as Event));
+            return state.update(EVENTS, (events) => [...events, payload as Event]);
         case SET_CURRENT_DATE:
             return state.set(CURRENT_DATE, payload as Date);
         default:

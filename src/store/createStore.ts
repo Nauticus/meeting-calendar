@@ -9,7 +9,7 @@ const getReducersFromDucks = _.pipe(
     _.reduce((result, { MOUNT_POINT, reducer }) => Object.assign(result, { [MOUNT_POINT]: reducer }), {})
 );
 
-const configureStore = (preloadedState: PreloadedState<State>): Store<State, Actions> => {
+const configureStore = (preloadedState?: PreloadedState<State>): Store<State, Actions> => {
     const reducers = getReducersFromDucks(ducks);
     const rootReducer = combineReducers(reducers);
 
