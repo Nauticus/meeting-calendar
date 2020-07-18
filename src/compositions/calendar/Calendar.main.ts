@@ -1,4 +1,3 @@
-import fp from "lodash/fp";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 
@@ -19,6 +18,6 @@ const dispatchProps = (dispatch: Dispatch) =>
         dispatch
     );
 
-const WrappedCalendar = fp.pipe([connect(stateProps, dispatchProps)])(Calendar);
+const WrappedCalendar = connect(stateProps, dispatchProps)(Calendar);
 
 export default WrappedCalendar;

@@ -24,18 +24,26 @@ const Navigation: React.FunctionComponent<NavigationProps> = ({ setCurrentDate, 
         <div className={classes.NavigationWrapper}>
             <div className={classes.Navigation}>
                 <ButtonGroup className={classes.NavigationButtonGroup}>
-                    <Button color="primary" variant="outlined" onClick={onPreviousHandler}>
+                    <Button data-testid="previousButton" color="primary" variant="outlined" onClick={onPreviousHandler}>
                         {"Previous"}
                     </Button>
-                    <Button disableRipple onClick={onTodayHandler} variant="contained" color="primary">
+                    <Button
+                        data-testid="todayButton"
+                        disableRipple
+                        onClick={onTodayHandler}
+                        variant="contained"
+                        color="primary"
+                    >
                         {"Today"}
                     </Button>
-                    <Button color="primary" variant="outlined" onClick={onNextHandler}>
+                    <Button data-testid="nextButton" color="primary" variant="outlined" onClick={onNextHandler}>
                         {"Next"}
                     </Button>
                 </ButtonGroup>
             </div>
-            <Typography variant='h5'>{format(currentDate, "MMMM yyyy")}</Typography>
+            <Typography data-testid="currentMonthAndYear" variant="h5">
+                {format(currentDate, "MMMM yyyy")}
+            </Typography>
         </div>
     );
 };
