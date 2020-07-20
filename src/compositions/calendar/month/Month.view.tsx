@@ -1,6 +1,5 @@
 import * as React from "react";
 import { eachDayOfInterval, startOfWeek, endOfWeek, endOfMonth } from "date-fns";
-import _ from "lodash";
 import { Typography } from "@material-ui/core";
 
 import { useTheme } from "app/theming";
