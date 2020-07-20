@@ -13,7 +13,7 @@ import { WEEK_DAYS } from "./Month.constants";
 const Month: React.FunctionComponent<MonthProps> = ({ currentDate }: MonthProps) => {
     const theme = useTheme();
     const classes = useStyles({ theme });
-    const [daysInMonthChunks, setDaysInMonthChunks] = React.useState<Date[][]>([]);
+    const [daysInMonth, setDaysInMonth] = React.useState<Date[]>([]);
 
     React.useEffect(() => {
         const daysOfMonth = eachDayOfInterval({
@@ -21,32 +21,23 @@ const Month: React.FunctionComponent<MonthProps> = ({ currentDate }: MonthProps)
             end: endOfWeek(endOfMonth(currentDate), { weekStartsOn: 1 }),
         });
 
-        setDaysInMonthChunks(_.chunk(daysOfMonth, 7));
+        setDaysInMonth(daysOfMonth);
     }, [currentDate]);
+
     return (
         <div className={classes.TableWrapper}>
-            <table className={classes.Table}>
-                <thead>
-                    <tr className={classes.TableHeader}>
-                        {WEEK_DAYS.map((day, index) => (
-                            <th key={index}>
-                                <Typography gutterBottom variant="button">
-                                    {day}
-                                </Typography>
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody data-testid="calendarGrid">
-                    {daysInMonthChunks.map((daysInWeek, key) => (
-                        <tr key={key}>
-                            {daysInWeek.map((day, dayKey) => (
-                                <Day key={dayKey} day={day} />
-                            ))}
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <div className={classes.GridContainer}>
+                {WEEK_DAYS.map((day, index) => (
+                    <div className={classes.GridHeader} key={index}>
+                        <Typography gutterBottom variant="button">
+                            {day}
+                        </Typography>
+                    </div>
+                ))}
+                {daysInMonth.map((day, key) => (
+                    <Day key={key} day={day} />
+                ))}
+            </div>
         </div>
     );
 };
