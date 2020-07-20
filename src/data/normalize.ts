@@ -8,8 +8,8 @@ import {
     EVENTS,
     MEETING_ROOMS,
     CURRENT_DATE,
-} from "./compositions/calendar/Calendar.constants";
-import { State } from "./compositions/calendar/Calendar.types";
+} from "app/compositions/calendar/Calendar.constants";
+import { State } from "app/compositions/calendar/Calendar.types";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const normalize = (data: any): any => ({
