@@ -4,9 +4,9 @@ const useStyles = createUseStyles({
     DayWrapper: {
         height: "100%",
         boxSizing: "border-box",
+        cursor: 'pointer'
     },
-    DayLabel: {
-    },
+    DayLabel: {},
     InactiveDayLabel: {
         opacity: "0.3",
     },
