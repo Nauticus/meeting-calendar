@@ -140,7 +140,7 @@ describe("Calendar", () => {
         expect(getByTestId("eventsDialog")).toBeInTheDocument();
     });
 
-    test("should show all events in a given day by ascending order emeded in dialog", () => {
+    test("should show all events in a given day by ascending order embeded in dialog", () => {
         const { getByTestId } = render(<Calendar />, { wrapper: getProviderWrapper(store) });
         const currentDayCell = getByTestId(format(currentTime, "d:L:y"));
 
