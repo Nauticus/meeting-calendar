@@ -33,22 +33,23 @@ const Events: React.FunctionComponent<EventsProps> = ({ eventsInCurrentMonth, da
     }, [eventsInCurrentMonth, day]);
 
     return (
-        <div data-testid="eventsContainer" onClick={onOpenDialog} className={classes.Events}>
+        <div data-testid={format(day, "d:L:y")} onClick={onOpenDialog} className={classes.Events}>
             {_.pipe([
                 _.take(3),
                 _.map((event: Event) => (
                     <Card
-                        data-testid="gridEvent"
+                        data-testid={`gridEvent:${format(event.start, "hh:mm")}`}
                         key={`${format(event.start, "d-hh-mm")}-${event.name}`}
                         className={classes.Event}
                         variant="outlined"
                     >
-                        <Typography variant="caption">{`${format(event.start, "hh:mm a")} - ${format(
-                            event.end,
-                            "hh:mm a"
-                        )}`}</Typography>
+                        <Typography data-testid="eventTime" color="textSecondary" variant="caption">
+                            {`${format(event.start, "hh:mm a")} - ${format(event.end, "hh:mm a")}`}
+                        </Typography>
                         <Divider />
-                        <Typography variant="subtitle2">{event.name}</Typography>
+                        <Typography data-testid="eventName" color="textPrimary" variant="subtitle2">
+                            {event.name}
+                        </Typography>
                     </Card>
                 )),
             ])(events)}

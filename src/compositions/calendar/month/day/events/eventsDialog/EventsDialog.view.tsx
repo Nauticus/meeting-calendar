@@ -16,10 +16,10 @@ import {
 import { EventsDialogProps } from "./EventsDialog.types";
 
 const EventsDialog: React.FunctionComponent<EventsDialogProps> = ({ isOpen, onClose, events }: EventsDialogProps) => {
-
     return (
         <Dialog
             maxWidth="sm"
+            data-testid="eventsDialog"
             fullWidth
             onClose={onClose}
             aria-labelledby="customized-dialog-title"
@@ -35,13 +35,17 @@ const EventsDialog: React.FunctionComponent<EventsDialogProps> = ({ isOpen, onCl
                     events.map((event, index) => (
                         <List key={index}>
                             <ListItem>
-                                <ListItemText>
-                                    <Typography variant="h6">{event.name}</Typography>
-                                    <Typography variant="body1">{event.meetingRoom}</Typography>
-                                    <Typography variant="body1">{`${format(event.start, "hh:mm a")} - ${format(
-                                        event.end,
+                                <ListItemText data-testid="eventItem">
+                                    <Typography data-testid="eventName" variant="h6">
+                                        {event.name}
+                                    </Typography>
+                                    <Typography data-testid="eventMeetingRoom" variant="body1">
+                                        {event.meetingRoom}
+                                    </Typography>
+                                    <Typography data-testid="eventTime" variant="body1">{`${format(
+                                        event.start,
                                         "hh:mm a"
-                                    )}`}</Typography>
+                                    )} - ${format(event.end, "hh:mm a")}`}</Typography>
                                 </ListItemText>
                             </ListItem>
                         </List>
