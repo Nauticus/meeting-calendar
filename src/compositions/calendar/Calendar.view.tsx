@@ -10,7 +10,9 @@ const Calendar: React.FunctionComponent<void> = () => {
 
     return (
         <div className={classes.Wrapper}>
-            <Typography gutterBottom variant="h4">{"Meeting Calendar"}</Typography>
+            <Typography gutterBottom variant="h4">
+                {"Meeting Calendar"}
+            </Typography>
             <Navigation />
             <Month />
         </div>

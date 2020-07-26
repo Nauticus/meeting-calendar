@@ -95,7 +95,7 @@ describe("Calendar", () => {
         expect(getByTestId("currentMonthAndYear").textContent).toBe(format(addMonths(currentDate, 1), "MMMM yyyy"));
     });
 
-    test("should naviate to current month", () => {
+    test("should navigate to current month", () => {
         store.dispatch(CalendarDuck.actionCreators.setCurrentDate(subMonths(currentDate, 2)));
         const { getByTestId } = render(<Calendar />, { wrapper: getProviderWrapper(store) });
         const todayButton = getByTestId("todayButton");
@@ -105,7 +105,7 @@ describe("Calendar", () => {
         expect(getByTestId("currentMonthAndYear").textContent).toBe(format(currentDate, "MMMM yyyy"));
     });
 
-    test("should naviate to previous month", () => {
+    test("should navigate to previous month", () => {
         const { getByTestId } = render(<Calendar />, { wrapper: getProviderWrapper(store) });
         const previousButton = getByTestId("previousButton");
 
@@ -140,7 +140,7 @@ describe("Calendar", () => {
         expect(getByTestId("eventsDialog")).toBeInTheDocument();
     });
 
-    test("should show all events in a given day by ascending order embeded in dialog", () => {
+    test("should show all events in a given day by ascending order embedded in dialog", () => {
         const { getByTestId } = render(<Calendar />, { wrapper: getProviderWrapper(store) });
         const currentDayCell = getByTestId(format(currentTime, "d:L:y"));
 
