@@ -57,7 +57,7 @@
     "cross-env": "^7.0.2",
     "eslint": "^7.0.0",
     "eslint-plugin-react": "^7.20.3",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.1",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.1.0",
